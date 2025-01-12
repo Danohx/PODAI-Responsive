@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenida</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main">
+        <div class="shadow">
+            <!-- Encabezado de Página -->
+            <header>
+                <div class="image-container">
+                    <img src="./src/banner.jpg" alt="Banner">
+                    <img src="./src/barra.png" alt="Barra">
+                </div>
+                <div class="hamburger" onclick="toggleMenu()">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <span class="menu-text">Menú</span>
+                </div>
+                <nav id="menu">
+                    <a href="#">Cerrar Sesión</a>
+                    <div class="dropdown">
+                        <button class="dropdown-toggle" onclick="toggleDropdown(1)">Datos de usuario</button>
+                        <div class="dropdown-menu" id="dropdown-1">
+                            <a href="#">Cambiar contraseña</a>
+                            <a href="#">Actualizar datos de recuperación</a>
+                        </div>
+                    </div>
+                    <a href="./Calificaciones.html">Consultar mis calificaciones</a>
+                    <a href="#">Entrevista inicial</a>
+                    <div class="dropdown">
+                        <button class="dropdown-toggle" onclick="toggleDropdown(2)">Pagos</button>
+                        <div class="dropdown-menu" id="dropdown-2">
+                            <a href="./Pagos.html">Pago de colegiatura</a>
+                            <a href="#">Titulación/Examen Egreso</a>
+                            <a href="#">Constancia de estudio</a>
+                        </div>
+                    </div>
+                    <a href="#">Agenda</a>
+                </nav>
+            </header>
+            <!-- Fin de Encabezado -->
+
+            <!-- Sistema de Pago -->
+            <div>
+                <div class="highlight">
+                    <center>
+                        <strong>Pago de colegiaturas</strong>
+                    </center>
+                </div>
+                
+                <div class="student-info">
+                    <strong>
+                        <span>ALUMNO</span>
+                        <span style="color: green;">LEONARDO DANIEL TOLENTINO HERNANDEZ</span>
+                    </strong>
+                </div>
+                <div class="warning">
+                    Si usted ha pagado colegiaturas y el sistema muestra que las adeuda, favor de reportarlo para verificarlo.<br>
+                    Cualquier duda o aclaración favor de pasar a <b>servicios escolares</b>.
+                </div>
+                <div class="container">
+                    <span>
+                        <div class="text">
+                            <center><strong>Adeudos</strong></center>
+                        </div>
+                    </span>
+
+                    <table>
+                        <tr>
+                            <th>Concepto</th>
+                            <th>Costo</th>
+                        </tr>
+                        <tr>
+                            <td>REINSCRIPCIÓN TECNICO SUPERIOR UNIVERSITARIO ENE-ABR 2025</td>
+                            <td>$1541.69</td>
+                        </tr>
+                        <tr class="total">
+                            <td>Total a pagar</td>
+                            <td>$1541.69</td>
+                        </tr>
+                    </table>
+                
+                    <button class="imprimir">Imprimir</button>
+                
+                    <div class="text">
+                        <span><center>Colegiaturas pagadas</center></span>
+                    </div>
+                    <table>
+                        <tr>
+                            <th>No. Factura</th>
+                            <th>Concepto</th>
+                            <th>Mes</th>
+                            <th>Costo</th>
+                            <th>Fecha de pago</th>
+                        </tr>
+                        <tr>
+                            <td>508650</td>
+                            <td>REINSCRIPCIÓN TECNICO SUPERIOR UNIVERSITARIO SEPT-DIC 2024</td>
+                            <td>SEPTIEMBRE 2024</td>
+                            <td>$1541.69</td>
+                            <td>6/8/2024</td>
+                        </tr>
+                        <tr>
+                            <td>508650</td>
+                            <td>SEGURO ESTUDIANTIL CONTRA ACCIDENTES 2024</td>
+                            <td>SEPTIEMBRE 2024</td>
+                            <td>$218.23</td>
+                            <td>6/8/2024</td>
+                        </tr>
+                        <tr>
+                            <td>499408</td>
+                            <td>REINSCRIPCIÓN TECNICO SUPERIOR UNIVERSITARIO MAY-AGO 2024</td>
+                            <td>MAYO 2024</td>
+                            <td>$1541.69</td>
+                            <td>2/4/2024</td>
+                        </tr>
+                        <tr>
+                            <td>488941</td>
+                            <td>REINSCRIPCIÓN TECNICO SUPERIOR UNIVERSITARIO ENE-ABR 2024</td>
+                            <td>ENERO 2024</td>
+                            <td>$1473.11</td>
+                            <td>1/1/2024</td>
+                        </tr>
+                        <tr>
+                            <td>477169</td>
+                            <td>SEGURO ESTUDIANTIL CONTRA ACCIDENTES 2023</td>
+                            <td>SEPTIEMBRE 2023</td>
+                            <td>$208.52</td>
+                            <td>1/8/2023</td>
+                        </tr>
+                        <tr>
+                            <td>477169</td>
+                            <td>INSCRIPCIÓN TECNICO SUPERIOR UNIVERSITARIO SEP-DIC 2023</td>
+                            <td>SEPTIEMBRE 2023</td>
+                            <td>$1473.11</td>
+                            <td>1/8/2023</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <!-- Fin de Sistema de Pago -->
+        </div>
+
+        <!-- Pie de Página -->
+        <footer>
+            <p>Carretera Huejutla - Chalahuiyapa S/N, C.P. 43000, Huejutla de Reyes, Hidalgo.</p>
+            <p>Teléfonos: 789 8962088 al 91</p>
+            <p>E-mail: <strong>rectoría@uthh.edu.mx</strong></p>
+            <p>Universidad Tecnológica de la Huasteca Hidalguense</p>
+        </footer>
+        <!-- Fin de Pie -->
+    </div>
+
+    <script>
+        // Mostrar/Ocultar menú hamburguesa
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            const isHidden = menu.style.display === 'none' || menu.style.display === '';
+            menu.style.display = isHidden ? 'flex' : 'none';
+        }
+
+        // Mostrar/Ocultar dropdown específico
+        function toggleDropdown(id) {
+            const dropdownMenu = document.getElementById(`dropdown-${id}`);
+            const isHidden = dropdownMenu.style.display === 'none' || dropdownMenu.style.display === '';
+            
+            // Ocultar todos los dropdowns antes de abrir el actual
+            const allDropdowns = document.querySelectorAll('.dropdown-menu');
+            allDropdowns.forEach(menu => menu.style.display = 'none');
+
+            // Mostrar u ocultar el seleccionado
+            dropdownMenu.style.display = isHidden ? 'block' : 'none';
+        }
+
+        // Cerrar los dropdowns si se hace clic fuera
+        document.addEventListener('click', (event) => {
+            const isDropdown = event.target.matches('.dropdown-toggle') || event.target.closest('.dropdown-menu');
+            if (!isDropdown) {
+                const allDropdowns = document.querySelectorAll('.dropdown-menu');
+                allDropdowns.forEach(menu => menu.style.display = 'none');
+            }
+        });
+    </script>
+    </div>
+</body>
+</html>

@@ -1,0 +1,355 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Tahoma, Verdana, Helvetica, sans-serif;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* Contenedor principal */
+.main {
+    max-width: 840px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+.shadow{
+    box-shadow: 0 4px 20px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Ajuste del encabezado */
+header {
+    background-color: #313131;
+    color: white;
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.image-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+.image-container img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/* Estilos de navegación */
+header a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 20px;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+nav {
+    background-color: #414141;
+    width: 100%;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    font-size: 14px;
+    margin: 10px;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    align-items: center;
+    align-self: flex-start;
+    margin-left: 20px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+.menu-text {
+    color: white;
+    padding-top: 10px;
+    font-size: 16px; 
+    font-family: Arial, sans-serif;
+}
+
+/* Dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin: 10px 20px;
+}
+
+.dropdown-toggle {
+    background-color: #414141;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #414141;
+    min-width: 200px;
+    padding-top: 10px;
+}
+
+.dropdown-menu a {
+    padding: 5%;
+    margin: 5%;
+}
+
+.dropdown-menu a:hover {
+    background-color: #515151;
+}
+
+/* Información de usuario */
+.user-info {
+    background-color: #ccdfca;
+    padding-top: 24px;
+    padding-left: 15px;
+    margin: 20px auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    border: 3px solid rgb(70, 132, 95);
+}
+
+.user-info span {
+    display: block;
+    margin: 10px 0;
+    font-size: 18px;
+    color: #294775;
+}
+
+footer {
+    background-color: #313131;
+    color: white;
+    padding: 20px;
+    font-size: 14px;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+/* Pago de Colegiatura */
+.container {
+    width: 90%;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    border: 2px solid rgb(192, 192, 192);
+}
+
+.highlight {
+    background-color: #ffeb99;
+    padding: 25px;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-top: 17px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.student-info {
+    width: 90%;
+    margin: 20px auto;
+    text-align: left;
+    padding: 10px;
+    box-shadow: 0px 1px 9px 2px rgba(0, 0, 0, 0.2);
+}
+
+.warning {
+    text-align: center;
+    color: red;
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+table th {
+    background: linear-gradient(
+        to bottom, 
+        #2e7d31, /* Verde oscuro */
+        #256629, /* Verde más oscuro (intermedio) */
+        #1b5e20, /* Verde esmeralda oscuro */
+        #256629, /* Verde más oscuro (brillo) */
+        #2e7d32  /* Verde oscuro */
+    );
+    color: white;
+}
+
+table .total {
+    text-align: left;
+}
+
+.imprimir {
+    border: 1px solid #c0c0c0;
+    padding-left: 70px;
+    padding-right: 70px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto;
+}
+
+.imprimir:hover {
+    background-color: #cfcfcf;
+}
+
+/* Calificaciones */
+.dropdown {
+    margin-left: 0;
+}
+
+.promedio-final{
+    color: red;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    html, body {
+        height: 100%;
+    }
+
+    .hamburger {
+        display: flex;
+        padding: 8px;
+    }
+
+    nav {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    nav a {
+        padding: 5px;
+        font-size: 13px;
+    }
+    .menu-text {
+        font-size: 10px;
+    }
+
+    .dropdown {
+        width: 100%;
+    }
+
+    .dropdown-toggle {  
+        text-align: left;
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .dropdown-menu {
+        position: relative;
+        width: 100%;
+        background-color: #515151;
+        padding: 10px 0;
+    }
+
+    .dropdown-menu a{
+        display: block;
+        padding: 10px 15px;
+        font-size: 13px;
+        text-align: left;
+    }
+
+    .main{
+        margin-bottom: 0; 
+    }
+    
+    .user-info span {
+        font-size: 12px;
+    }
+
+    .image-container img {
+        max-width: 135%;
+        height: auto;
+    }
+
+    footer {
+        margin-top: 0; 
+        margin-bottom: 0; 
+        font-size: 12px;
+    }
+
+    /* Pagos */
+    .text{
+        font-size: 10px;
+    }
+
+    table {
+        font-size: 8px;
+    }
+
+    .highlight {
+        margin-left: 9px;
+        margin-right: 9px;
+        padding: 9px;
+        font-size: 10px;
+    }
+
+    .imprimir {
+        padding-left: 25px;
+        padding-right: 25px;
+        padding-top: 6px;
+        padding-bottom: 6px;
+        font-size: 8px;
+    }
+
+    .warning{
+        font-size: 8px;
+    }
+
+    .student-info{
+        font-size: 8px;
+    }
+
+    /* Calificaciones */
+    select{
+        font-size: 8px;
+    }
+}

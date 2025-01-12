@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenida</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main">
+        <div class="shadow">
+            <!-- Encabezado de Página -->
+            <header>
+                <div class="image-container">
+                    <img src="./src/banner.jpg" alt="Banner">
+                    <img src="./src/barra.png" alt="Barra">
+                </div>
+                <div class="hamburger" onclick="toggleMenu()">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <span class="menu-text">Menú</span>
+                </div>
+                <nav id="menu">
+                    <a href="#">Cerrar Sesión</a>
+                    <div class="dropdown">
+                        <button class="dropdown-toggle" onclick="toggleDropdown(1)">Datos de usuario</button>
+                        <div class="dropdown-menu" id="dropdown-1">
+                            <a href="#">Cambiar contraseña</a>
+                            <a href="#">Actualizar datos de recuperación</a>
+                        </div>
+                    </div>
+                    <a href="./Calificaciones.html">Consultar mis calificaciones</a>
+                    <a href="#">Entrevista inicial</a>
+                    <div class="dropdown">
+                        <button class="dropdown-toggle" onclick="toggleDropdown(2)">Pagos</button>
+                        <div class="dropdown-menu" id="dropdown-2">
+                            <a href="./Pagos.html">Pago de colegiatura</a>
+                            <a href="#">Titulación/Examen Egreso</a>
+                            <a href="#">Constancia de estudio</a>
+                        </div>
+                    </div>
+                    <a href="#">Agenda</a>
+                </nav>
+            </header>
+            <!-- Fin de Encabezado -->
+
+            <!-- Datos Personales -->
+            <div class="user-info">
+                <span>
+                    <span style="padding-bottom: 67px;">
+                        <center>Bienvenido</center>
+                    </span>
+                </span>
+                <span>
+                    <span style="padding-bottom: 40px;">
+                        LEONARDO DANIEL TOLENTINO HERNANDEZ
+                    </span>
+                </span>
+                <span>
+                    <span style="padding-bottom: 110px;">
+                        ALUMNO DEL 5to. CUATRIMESTRE, GRUPO C
+                    </span>
+                </span>
+                <span>
+                    <span style="padding-bottom: 32px;">
+                        ENERO-ABRIL 2025
+                    </span>
+                </span>
+            </div>
+            <!-- Fin de Datos Personales -->
+        </div>
+
+        <!-- Pie de Página -->
+        <footer>
+            <p>Carretera Huejutla - Chalahuiyapa S/N, C.P. 43000, Huejutla de Reyes, Hidalgo.</p>
+            <p>Teléfonos: 789 8962088 al 91</p>
+            <p>E-mail: <strong>rectoría@uthh.edu.mx</strong></p>
+            <p>Universidad Tecnológica de la Huasteca Hidalguense</p>
+        </footer>
+        <!-- Fin de Pie -->
+    </div>
+
+    <script>
+        // Mostrar/Ocultar menú hamburguesa
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            const isHidden = menu.style.display === 'none' || menu.style.display === '';
+            menu.style.display = isHidden ? 'flex' : 'none';
+        }
+
+        // Mostrar/Ocultar dropdown específico
+        function toggleDropdown(id) {
+            const dropdownMenu = document.getElementById(`dropdown-${id}`);
+            const isHidden = dropdownMenu.style.display === 'none' || dropdownMenu.style.display === '';
+            
+            // Ocultar todos los dropdowns antes de abrir el actual
+            const allDropdowns = document.querySelectorAll('.dropdown-menu');
+            allDropdowns.forEach(menu => menu.style.display = 'none');
+
+            // Mostrar u ocultar el seleccionado
+            dropdownMenu.style.display = isHidden ? 'block' : 'none';
+        }
+
+        // Cerrar los dropdowns si se hace clic fuera
+        document.addEventListener('click', (event) => {
+            const isDropdown = event.target.matches('.dropdown-toggle') || event.target.closest('.dropdown-menu');
+            if (!isDropdown) {
+                const allDropdowns = document.querySelectorAll('.dropdown-menu');
+                allDropdowns.forEach(menu => menu.style.display = 'none');
+            }
+        });
+    </script>
+</body>
+</html>
